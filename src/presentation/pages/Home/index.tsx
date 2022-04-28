@@ -1,7 +1,7 @@
 import styles from "./Home.module.scss";
 import { Button, Col, Container, Row } from "react-bootstrap";
 
-function Home() {
+export default function Home() {
   return (
     <Container className={styles.container + " mt-5 p-5 mb-5"}>
       <Row className={"justify-content-center"}>
@@ -46,5 +46,3 @@ function Home() {
     </Container>
   );
 }
-
-export default Home;
