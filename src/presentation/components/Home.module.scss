@@ -1,9 +1,37 @@
-.container{
+.container {
 	background-color: #FFF;
 	border-radius: 2em;
 }
 
-main p{
-	color: #5BB27E;
-	font-weight: normal;
+.container {
+	p {
+ 		color: #5BB27E;
+		font-weight: normal;
+	}
+}
+
+.imageContainer {
+	img {
+		width: 100%;
+		filter: drop-shadow(6px 3px 3px rgba(0, 0, 0, 0.2));
+	}
+}
+
+.divisor{
+	background-color: #5BB27E;
+	height: 1px;
+}
+
+.btnPrimary{
+	background-color: #5BB27E;
+	border-color: #5BB27E;
+}
+
+.btnPrimary:hover, .btnPrimary:active, .btnPrimary:focus{
+	background-color: #458860;
+	border-color: #458860;
+}
+
+.btnPrimary:focus{
+	box-shadow: 0 0 0 0.25rem #5BB27E80;
 }

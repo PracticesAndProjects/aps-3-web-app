@@ -1,15 +1,21 @@
 import Navbar from "./Navbar";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Col, Container, Row } from "react-bootstrap";
+import styles from "./Header.module.scss";
 
 function Header() {
   return (
     <>
-      <div className="container">
-        <div className="col-auto">
-          <img src="./LOGObranca.svg" alt="" />
-        </div>
-
-        <Navbar />
+      <div className={styles.header + " py-3"}>
+        <Container>
+          <Row>
+            <Col>
+              <img src="./LOGObranca.svg" alt="" />
+            </Col>
+            <Col className={"align-self-center col-auto"}>
+              <Navbar />
+            </Col>
+          </Row>
+        </Container>
       </div>
     </>
   );

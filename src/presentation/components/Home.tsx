@@ -1,10 +1,11 @@
 import styles from "./Home.module.scss";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 function Home() {
   return (
-    <main className={styles.container + " mt-5 p-5 mb-5"}>
-      <div className="row justify-content-center">
-        <div className="col-5 py-5">
+    <Container className={styles.container + " mt-5 p-5 mb-5"}>
+      <Row className={"justify-content-center"}>
+        <Col className={"col-5 py-5"}>
           <h3>Como o nosso Marketplace funciona...</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
@@ -12,33 +13,37 @@ function Home() {
             aspernatur tempora minus, nulla dolorem sequi, magni dicta impedit
             ut fugit aut ab.
           </p>
-        </div>
-        <div className="col-5 img__marketplace p-5">
-          <img src="./img/undraw_drag_re_shc0.svg" alt="" />
-        </div>
-      </div>
+        </Col>
+        <Col sm={5} className={"p-5"}>
+          <div className={styles.imageContainer}>
+            <img src="./undraw_drag_re_shc0.svg" alt="" />
+          </div>
+        </Col>
+      </Row>
 
-      <div className="row p-5">
-        <div className="divisor col-4 offset-4"></div>
-      </div>
+      <Row className={"p-5"}>
+        <Col className={"col-4 offset-4" + " " + styles.divisor}> </Col>
+      </Row>
 
-      <div className="row justify-content-center py-5">
-        <div className="col-3 img__account">
-          <img src="./img/undraw_access_account_re_8spm.svg" alt="" />
-        </div>
-        <div className="col-4">
+      <Row className={"justify-content-center py-5"}>
+        <Col sm={3}>
+          <div className={styles.imageContainer}>
+            <img src="./undraw_access_account_re_8spm.svg" alt="" />
+          </div>
+        </Col>
+        <Col sm={4}>
           <h4>Registre sua conta e começe a anunciar já</h4>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
             vulputate feugiat ligula, aliquet lacinia lectus volutpat non.
             Praesent elit augue.
           </p>
-          <button type="button" className="btn btn-primary">
-            Registrar já
-          </button>
-        </div>
-      </div>
-    </main>
+          <Button className={styles.btnPrimary} variant="primary">
+            Registrar Já
+          </Button>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

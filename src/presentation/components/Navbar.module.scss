@@ -1,8 +1,9 @@
 .navbar{
-	background-color: #5BB27E;
+	background-color: #81dda6;
 }
 
-.navbar-btns *{
+
+.navbarBtns *{
 	text-decoration: none;
 	color: #FFFFFF;
 }
@@ -12,34 +13,34 @@
 	transition: border-bottom 200ms ease-in-out;
 	display: flex;
 
-}
+	&:hover {
+		border-bottom-color: white;
 
-.navbarItem:hover{
-	border-bottom-color: white;
-}
+		* {
+			color: #FFFFFF;
+		}
+	}
 
-.navbarItem:hover *{
-	color: #FFFFFF;
 }
-
-.navbarLoginItem{
+.navbarLoginItem {
 	color: #5BB27E;
 	background-color: #FFFFFF;
 	border-radius: 0.25em;
 	padding: 6px;
-}
 
-.navbarLoginItem *{
-	color: #5BB27E;
-	padding: 8px;
-	transition: transform 250ms ease-in-out;
-	
-}
+	* {
+		color: #5BB27E;
+		padding: 8px;
+		transition: transform 250ms ease-in-out;
+	}
 
-.navbarLoginItem:hover *{
-	color: #5BB27E;
-}
+	&:hover {
+		* {
+			color: #5BB27E;
+		}
 
-.navbarLoginItem:hover i{
-	transform: translateX(-6px);
+		i {
+			transform: translateX(-6px);
+		}
+	}
 }

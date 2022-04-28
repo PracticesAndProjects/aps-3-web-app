@@ -1,28 +1,23 @@
-import { Col, Container, ListGroup, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  ListGroup,
+  ListGroupItem,
+  Nav,
+  NavItem,
+  NavLink,
+} from "react-bootstrap";
 import styles from "./Navbar.module.scss";
 
 function Navbar() {
   return (
-    <Container className={styles.nav}>
-      <Row>
-        <Col>
-          <ListGroup as="ul">
-            {/* <ul className="list-unstyled navbar-btns d-flex gap-5 m-0"> */}
-            <ListGroup.Item className={styles.navbarItem}>
-              <a href="/" className="p-1 align-self-center">
-                ÍNICIO
-              </a>
-            </ListGroup.Item>
-            <ListGroup.Item className={styles.navbarLoginItem}>
-              <a href="#">
-                <i className="fa-solid fa-arrow-right-to-bracket"></i>
-                LOGIN
-              </a>
-            </ListGroup.Item>
-          </ListGroup>
-        </Col>
-      </Row>
-    </Container>
+    <Nav className={styles.navbarBtns + " text-right d-flex gap-5 m-0"}>
+      <NavItem className={styles.navbarItem}>
+        <a className={"p-1 align-self-center"}>INICIO</a>
+      </NavItem>
+      <NavItem className={styles.navbarLoginItem}>
+        <a>ENTRAR</a>
+      </NavItem>
+    </Nav>
   );
 }
 export default Navbar;
