@@ -1,6 +1,8 @@
+import styles from "./Home.module.scss";
+
 function Home() {
   return (
-    <main className="container mt-5 p-5 mb-5">
+    <main className={styles.container + " mt-5 p-5 mb-5"}>
       <div className="row justify-content-center">
         <div className="col-5 py-5">
           <h3>Como o nosso Marketplace funciona...</h3>
