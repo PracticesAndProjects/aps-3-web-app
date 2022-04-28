@@ -30,17 +30,26 @@
 
 	* {
 		color: #5BB27E;
-		padding: 8px;
 		transition: transform 250ms ease-in-out;
 	}
 
+	.faIcon {
+		margin-left: 10px;
+	}
+	
 	&:hover {
 		* {
 			color: #5BB27E;
 		}
 
-		i {
+		.faIcon {
 			transform: translateX(-6px);
 		}
+	}
+}
+
+a {
+	&:hover{
+		cursor: pointer;
 	}
 }

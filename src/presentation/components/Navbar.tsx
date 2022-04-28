@@ -1,11 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  ListGroup,
-  ListGroupItem,
-  Nav,
-  NavItem,
-  NavLink,
-} from "react-bootstrap";
+  faCoffee,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
+import { Nav, NavItem } from "react-bootstrap";
 import styles from "./Navbar.module.scss";
 
 function Navbar() {
@@ -15,7 +13,11 @@ function Navbar() {
         <a className={"p-1 align-self-center"}>INICIO</a>
       </NavItem>
       <NavItem className={styles.navbarLoginItem}>
-        <a>ENTRAR</a>
+        <FontAwesomeIcon
+          className={styles.faIcon}
+          icon={faRightFromBracket}
+        ></FontAwesomeIcon>
+        <a className={"p-2 align-self-center"}>ENTRAR</a>
       </NavItem>
     </Nav>
   );
