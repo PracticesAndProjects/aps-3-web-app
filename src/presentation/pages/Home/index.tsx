@@ -1,9 +1,13 @@
-import styles from "./Home.module.scss";
+/* eslint-disable prettier/prettier */
 import { Button, Col, Container, Row } from "react-bootstrap";
+import Layout from "../../components/Layout";
+import styles from "./Home.module.scss";
 
 export default function Home() {
   return (
-    <Container className={styles.container + " mt-5 p-5 mb-5"}>
+    
+    <Layout>
+      
       <Row className={"justify-content-center"}>
         <Col className={"col-5 py-5"}>
           <h3>Como o nosso Marketplace funciona...</h3>
@@ -43,6 +47,8 @@ export default function Home() {
           </Button>
         </Col>
       </Row>
-    </Container>
+      
+    </Layout>
+    
   );
 }

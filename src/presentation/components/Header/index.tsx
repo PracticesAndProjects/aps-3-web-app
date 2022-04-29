@@ -1,6 +1,7 @@
 import Navbar from "../Navbar";
 import { Col, Container, Row } from "react-bootstrap";
 import styles from "./Header.module.scss";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -9,7 +10,9 @@ function Header() {
         <Container>
           <Row>
             <Col>
-              <img src="./LOGObranca.svg" alt="" />
+              <Link to="/">
+                <img src="./LOGObranca.svg" alt="" />
+              </Link>
             </Col>
             <Col className={"align-self-center col-auto"}>
               <Navbar />
