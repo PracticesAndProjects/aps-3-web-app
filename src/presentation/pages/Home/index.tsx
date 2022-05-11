@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Button, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Layout from "../../components/Layout";
 import styles from "./Home.module.scss";
 
@@ -42,9 +43,11 @@ export default function Home() {
             vulputate feugiat ligula, aliquet lacinia lectus volutpat non.
             Praesent elit augue.
           </p>
-          <Button className={styles.btnPrimary} variant="primary">
-            Registrar Já
-          </Button>
+          <Link to="/signup">
+            <Button className={styles.btnPrimary} variant="primary">
+              Registrar Já
+            </Button>
+          </Link>
         </Col>
       </Row>
       
