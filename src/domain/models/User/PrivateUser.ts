@@ -1,23 +1,23 @@
 export default interface IPrivateUser {
-  id?: String;
-  email?: String;
+  id?: string;
+  email?: string;
   profile?: IUserProfile | undefined;
-  password?: String;
+  password?: string;
 }
 
 interface IUserProfile {
-  name?: String;
+  name?: string;
   address?: IUserAddress;
   documentTypology?: EnumDocumentTypology;
-  documentId?: String;
+  documentId?: string;
 }
 interface IUserAddress {
-  street?: String;
-  number?: Number;
-  zip?: String;
-  city?: String;
-  state?: String;
-  country?: String;
+  street?: string;
+  number?: number;
+  zip?: string;
+  city?: string;
+  state?: string;
+  country?: string;
 }
 
 enum EnumDocumentTypology {
