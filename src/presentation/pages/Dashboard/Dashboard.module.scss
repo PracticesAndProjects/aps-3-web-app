@@ -1,0 +1,53 @@
+$tom-1: #5BB27E;
+$tom-2: #458860;
+$tom-shadow: 0 0 0 0.25rem #5BB27E80;
+
+.user__prof__pic{
+	color: $tom-1;
+}
+
+h1{
+	color: $tom-1;
+	border-bottom: 1px solid whitesmoke;
+}
+h2,h3,h4,h5{
+	color: $tom-2;
+}
+
+.card__dashboard{
+	background-color: $tom-1;
+	width: 100%;
+	padding: 1em;
+	border-radius: 1em;
+	color: white;
+	display: flex;
+	flex-flow: column;
+	
+	& > p:first-child{
+		font-weight: bold;
+	}
+	
+	& *{
+		color: white !important;
+	}
+	
+}
+
+.nav__link{
+	color: $tom-2;
+	
+	&:active, &:focus, &:hover{
+		color: #458860;
+		text-decoration: underline;
+	}
+	&.active{
+		color: white;
+		background-color: $tom-1;
+		border-radius: 0.25em;
+	}
+	&.active, &.active:hover, &.active:active, &.active:focus{
+		color: white;
+		background-color: $tom-1;
+		border-radius: 0.25em;
+	}
+}
