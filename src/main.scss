@@ -1,0 +1,26 @@
+$tom-1: #5BB27E;
+$tom-2: #458860;
+$tom-shadow: 0 0 0 0.25rem #5BB27E80;
+
+.form-control:focus {
+	border-color: $tom-2;
+	box-shadow: $tom-shadow;
+}
+
+.btn-primary{
+	background-color: $tom-1;
+	border-color: $tom-1;
+	&:hover,&:active,&:focus{
+		background-color: $tom-2;
+		border-color: $tom-2;
+	}
+	
+	&:focus,&:focus:active{
+		box-shadow: $tom-shadow;
+	}
+}
+
+.form-check-input:checked {
+    background-color: $tom-1;
+    border-color: $tom-1;
+}
