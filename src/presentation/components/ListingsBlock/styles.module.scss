@@ -1,0 +1,28 @@
+.container {
+  padding: 0;
+  padding-bottom: 0.4rem;
+  
+}
+
+.container p {
+  padding: 0;
+  margin: 0;
+  color: gray;
+}
+
+.floatRight {
+  display: flex;
+  justify-content: right;
+}
+
+.container Button {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin: 0.5rem;
+}
+
+.container h4 {
+  margin: 0;
+  padding: 0;
+  margin-top: 1rem;
+}

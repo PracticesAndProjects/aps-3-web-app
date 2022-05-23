@@ -6,7 +6,7 @@ import styles from "./Layout.module.scss";
 import { Container } from "react-bootstrap";
 
 interface ILayoutProps {
-  children: React.ReactNode;
+  children: any;
 }
 function Layout(props: ILayoutProps) {
   return (
