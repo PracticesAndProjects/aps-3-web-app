@@ -180,7 +180,7 @@ export default function Signup() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/v1/users",
+        process.env.REACT_APP_API_URI + "/v1/users",
         newUserJSON
       );
 

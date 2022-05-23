@@ -7,6 +7,7 @@ import Signin from "../pages/Signin";
 import Listings from "../pages/Listings";
 import Orders from "../pages/Orders";
 import ProtectedRoute from "./ProtectedRoute";
+import NewListing from "../pages/NewListing";
 
 function MyRouter() {
   return (
@@ -32,6 +33,14 @@ function MyRouter() {
             element={
               <ProtectedRoute>
                 <Listings />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/listings/new"
+            element={
+              <ProtectedRoute>
+                <NewListing />
               </ProtectedRoute>
             }
           />

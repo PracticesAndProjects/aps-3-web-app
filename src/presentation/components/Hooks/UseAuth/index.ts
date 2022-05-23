@@ -21,6 +21,14 @@ const useAuth = () => {
       return JSON.parse(profileJSON);
     }
   };
+
+  const getProfile = () => {
+    const profileJSON = sessionStorage.getItem("user");
+    if (profileJSON) {
+      return JSON.parse(profileJSON);
+    }
+  };
+
   const getToken = () => {
     const profileJSON = sessionStorage.getItem("user");
 
@@ -33,8 +41,8 @@ const useAuth = () => {
     sessionStorage.removeItem("user");
   };
 
-  const doLogin = (token: string, name: string, email: string) => {
-    sessionStorage.setItem("user", JSON.stringify({ token, name, email }));
+  const doLogin = (token: string, name: string, email: string, id: string) => {
+    sessionStorage.setItem("user", JSON.stringify({ token, name, email, id }));
   };
 
   useEffect(() => {
@@ -49,6 +57,7 @@ const useAuth = () => {
     isAuthenticated,
     profile,
     getToken,
+    getProfile,
     doLogout,
     doLogin,
   };

@@ -55,16 +55,16 @@ export default function Signin() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/v1/auth/signin",
+        process.env.REACT_APP_API_URI + "/v1/auth/signin",
         formEntityJSON
       );
 
       if (response.status === 200) {
         toast.success("Logado com sucesso!");
-        console.log(response);
 
-        const { token, nome, email } = response.data;
-        doLogin(token, nome, email);
+        const { token, nome, email, id } = response.data;
+
+        doLogin(token, nome, email, id);
         navigate("/", { replace: true });
       }
 

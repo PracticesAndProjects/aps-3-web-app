@@ -1,5 +1,9 @@
+import axios from "axios";
 import React from "react";
 import { Button, Col, Container, ListGroup, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useAuth } from "../Hooks/UseAuth";
 import styles from "./styles.module.scss";
 
 interface IProps {
@@ -19,9 +23,65 @@ interface IUser {
   email: string;
   nome: string;
   telefone: string;
+  id: number;
 }
 
 export default function ListingsBlock(props: IProps) {
+  const { getProfile, getToken } = useAuth();
+
+  const navigate = useNavigate();
+
+  const handleDelete = async (id: number) => {
+    try {
+      const response = await axios.delete(
+        process.env.REACT_APP_API_URI + "/v1/listings/" + id,
+        {
+          headers: {
+            Authorization: `Bearer ${getToken()}`,
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        toast.success("Anúncio deletado com sucesso.");
+        console.log(response);
+
+        navigate(0);
+      }
+
+      //
+    } catch (err: any) {
+      toast.error("Erro ao deletar o anúncio.");
+      console.log(err);
+    }
+  };
+
+  const handleOrder = async (id: number) => {
+    try {
+      const response = await axios.post(
+        process.env.REACT_APP_API_URI + "/v1/listings/order/" + id,
+        null,
+        {
+          headers: {
+            Authorization: `Bearer ${getToken()}`,
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        toast.success("Pedido criado com sucesso.");
+        console.log(response);
+
+        navigate(0);
+      }
+
+      //
+    } catch (err: any) {
+      toast.error("Erro ao criar o pedido.");
+      console.log(err);
+    }
+  };
+
   return (
     <ListGroup>
       {props.data.map((listing: IListing) => {
@@ -53,7 +113,34 @@ export default function ListingsBlock(props: IProps) {
               </Row>
               <Row>
                 <Col className={styles.floatRight}>
-                  <Button>Criar Pedido</Button>
+                  {getProfile().id == listing.usuario.id ? (
+                    <Button
+                      disabled
+                      onClick={() => {
+                        handleOrder(listing.id);
+                      }}
+                    >
+                      Criar Pedido
+                    </Button>
+                  ) : (
+                    <Button
+                      onClick={() => {
+                        handleOrder(listing.id);
+                      }}
+                    >
+                      Criar Pedido
+                    </Button>
+                  )}
+                  {getProfile().id == listing.usuario.id ? (
+                    <Button
+                      onClick={() => {
+                        handleDelete(listing.id);
+                      }}
+                      className={styles.deleteBtn}
+                    >
+                      Deletar Anúncio
+                    </Button>
+                  ) : null}
                 </Col>
               </Row>
             </Container>

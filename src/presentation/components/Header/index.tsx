@@ -11,7 +11,7 @@ function Header() {
           <Row>
             <Col>
               <Link to="/">
-                <img src="./LOGObranca.svg" alt="" />
+                <img src="./../LOGObranca.svg" alt="" />
               </Link>
             </Col>
             <Col className={"align-self-center col-auto"}>

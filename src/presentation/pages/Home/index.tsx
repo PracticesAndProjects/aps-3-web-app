@@ -16,7 +16,7 @@ export default function Home() {
         <>
         <Row className={"justify-content-center"}>
         <Col className={"col-5 py-5"}>
-          <h3>Seja bem-vindo, <br /> {profile ? profile.name : null}!</h3>
+          <h3>Seja bem-vindo, <br /> {profile() ? profile().name : null}!</h3>
           <p>
             Você pode ver as suas listagens, ordens de serviço ou as listagens disponíveis no mercado.
           </p>
