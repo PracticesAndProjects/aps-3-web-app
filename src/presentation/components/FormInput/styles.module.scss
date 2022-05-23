@@ -1,0 +1,19 @@
+.formContainer {
+  margin-bottom: 30px;
+}
+
+span {
+  color: #ad4c4c;
+  padding: 0.2rem;
+  font-size: 0.9rem;
+  display: none;
+}
+
+input:invalid ~ span {
+  display: block;
+}
+
+h3 {
+  padding-bottom: 1rem;
+  
+}

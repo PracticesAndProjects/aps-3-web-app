@@ -1,14 +1,36 @@
 /* eslint-disable prettier/prettier */
 import { Button, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { useAuth } from "../../components/Hooks/UseAuth";
 import Layout from "../../components/Layout";
 import styles from "./Home.module.scss";
 
 export default function Home() {
+  const {isAuthenticated, profile} = useAuth();
+
   return (
     
     <Layout>
-      
-      <Row className={"justify-content-center"}>
+      {
+        isAuthenticated() ?
+        <>
+        <Row className={"justify-content-center"}>
+        <Col className={"col-5 py-5"}>
+          <h3>Seja bem-vindo, <br /> {profile() ? profile().name : null}!</h3>
+          <p>
+            Você pode ver as suas listagens, ordens de serviço ou as listagens disponíveis no mercado.
+          </p>
+        </Col>
+        <Col sm={5} className={"p-5"}>
+          <div className={styles.imageContainer}>
+            <img src="./undraw_drag_re_shc0.svg" alt="" />
+          </div>
+        </Col>
+      </Row>
+        </>
+        :
+        <>
+        <Row className={"justify-content-center"}>
         <Col className={"col-5 py-5"}>
           <h3>Como o nosso Marketplace funciona...</h3>
           <p>
@@ -42,11 +64,16 @@ export default function Home() {
             vulputate feugiat ligula, aliquet lacinia lectus volutpat non.
             Praesent elit augue.
           </p>
-          <Button className={styles.btnPrimary} variant="primary">
-            Registrar Já
-          </Button>
+          <Link to="/signup">
+            <Button className={styles.btnPrimary} variant="primary">
+              Registrar Já
+            </Button>
+          </Link>
         </Col>
       </Row>
+        </>
+      }
+      
       
     </Layout>
     
